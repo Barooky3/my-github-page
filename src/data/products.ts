@@ -1,7 +1,11 @@
 import type { Product } from '@/types/product';
+import lvCityOfStarsAsset from '@/assets/products/lv-city-of-stars.png.asset.json';
+import invictusVictoryElixirAsset from '@/assets/products/invictus-victory-elixir.png.asset.json';
+import exNihiloBlueTalismanAsset from '@/assets/products/ex-nihilo-blue-talisman.png.asset.json';
+import aventusAsset from '@/assets/products/aventus-gallery.png.asset.json';
+import baccaratRouge540Asset from '@/assets/products/baccarat-rouge-540-extrait.png.asset.json';
+import delinaImage from '@/assets/products/delina-lifestyle.png';
 
-// NOTE: Milestone 1 seed — a small subset of products so the home page renders.
-// Full 100+ product catalog will be ported in milestone 2 along with all asset pointers.
 export const products: Product[] = [
   {
     id: 'lv-city-of-stars',
@@ -11,7 +15,7 @@ export const products: Product[] = [
     originalPrice: 320,
     category: 'unisex',
     description: 'A luminous fragrance evoking a starlit night.',
-    image: '/placeholder.svg',
+    image: lvCityOfStarsAsset.url,
     affiliateUrl: '#',
     inStock: true,
     featured: true,
@@ -25,7 +29,7 @@ export const products: Product[] = [
     originalPrice: 145,
     category: 'men',
     description: 'A powerful, warm oriental elixir.',
-    image: '/placeholder.svg',
+    image: invictusVictoryElixirAsset.url,
     affiliateUrl: '#',
     inStock: true,
     featured: true,
@@ -39,7 +43,7 @@ export const products: Product[] = [
     originalPrice: 260,
     category: 'unisex',
     description: 'A vibrant fruity floral with mystical depth.',
-    image: '/placeholder.svg',
+    image: exNihiloBlueTalismanAsset.url,
     affiliateUrl: '#',
     inStock: true,
     featured: true,
@@ -53,7 +57,7 @@ export const products: Product[] = [
     originalPrice: 380,
     category: 'men',
     description: 'The legendary pineapple opening; a modern classic.',
-    image: '/placeholder.svg',
+    image: aventusAsset.url,
     affiliateUrl: '#',
     inStock: true,
     featured: true,
@@ -66,7 +70,7 @@ export const products: Product[] = [
     originalPrice: 450,
     category: 'unisex',
     description: 'Amber, floral and woody. Icon.',
-    image: '/placeholder.svg',
+    image: baccaratRouge540Asset.url,
     affiliateUrl: '#',
     inStock: true,
     featured: true,
@@ -79,7 +83,7 @@ export const products: Product[] = [
     originalPrice: 340,
     category: 'women',
     description: 'Rose, lychee and vanilla — modern feminine.',
-    image: '/placeholder.svg',
+    image: delinaImage,
     affiliateUrl: '#',
     inStock: true,
     featured: true,
