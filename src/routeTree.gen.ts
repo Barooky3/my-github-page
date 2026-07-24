@@ -15,6 +15,7 @@ import { Route as ShopRouteImport } from './routes/shop'
 import { Route as ReturnPolicyRouteImport } from './routes/return-policy'
 import { Route as PrivacyPolicyRouteImport } from './routes/privacy-policy'
 import { Route as LoginRouteImport } from './routes/login'
+import { Route as CustomBundleRouteImport } from './routes/custom-bundle'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as CheckoutRouteImport } from './routes/checkout'
 import { Route as AccountRouteImport } from './routes/account'
@@ -50,6 +51,11 @@ const PrivacyPolicyRoute = PrivacyPolicyRouteImport.update({
 const LoginRoute = LoginRouteImport.update({
   id: '/login',
   path: '/login',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CustomBundleRoute = CustomBundleRouteImport.update({
+  id: '/custom-bundle',
+  path: '/custom-bundle',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ContactRoute = ContactRouteImport.update({
@@ -88,6 +94,7 @@ export interface FileRoutesByFullPath {
   '/account': typeof AccountRoute
   '/checkout': typeof CheckoutRoute
   '/contact': typeof ContactRoute
+  '/custom-bundle': typeof CustomBundleRoute
   '/login': typeof LoginRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
   '/return-policy': typeof ReturnPolicyRoute
@@ -102,6 +109,7 @@ export interface FileRoutesByTo {
   '/account': typeof AccountRoute
   '/checkout': typeof CheckoutRoute
   '/contact': typeof ContactRoute
+  '/custom-bundle': typeof CustomBundleRoute
   '/login': typeof LoginRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
   '/return-policy': typeof ReturnPolicyRoute
@@ -117,6 +125,7 @@ export interface FileRoutesById {
   '/account': typeof AccountRoute
   '/checkout': typeof CheckoutRoute
   '/contact': typeof ContactRoute
+  '/custom-bundle': typeof CustomBundleRoute
   '/login': typeof LoginRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
   '/return-policy': typeof ReturnPolicyRoute
@@ -133,6 +142,7 @@ export interface FileRouteTypes {
     | '/account'
     | '/checkout'
     | '/contact'
+    | '/custom-bundle'
     | '/login'
     | '/privacy-policy'
     | '/return-policy'
@@ -147,6 +157,7 @@ export interface FileRouteTypes {
     | '/account'
     | '/checkout'
     | '/contact'
+    | '/custom-bundle'
     | '/login'
     | '/privacy-policy'
     | '/return-policy'
@@ -161,6 +172,7 @@ export interface FileRouteTypes {
     | '/account'
     | '/checkout'
     | '/contact'
+    | '/custom-bundle'
     | '/login'
     | '/privacy-policy'
     | '/return-policy'
@@ -176,6 +188,7 @@ export interface RootRouteChildren {
   AccountRoute: typeof AccountRoute
   CheckoutRoute: typeof CheckoutRoute
   ContactRoute: typeof ContactRoute
+  CustomBundleRoute: typeof CustomBundleRoute
   LoginRoute: typeof LoginRoute
   PrivacyPolicyRoute: typeof PrivacyPolicyRoute
   ReturnPolicyRoute: typeof ReturnPolicyRoute
@@ -227,6 +240,13 @@ declare module '@tanstack/react-router' {
       path: '/login'
       fullPath: '/login'
       preLoaderRoute: typeof LoginRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/custom-bundle': {
+      id: '/custom-bundle'
+      path: '/custom-bundle'
+      fullPath: '/custom-bundle'
+      preLoaderRoute: typeof CustomBundleRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/contact': {
@@ -289,6 +309,7 @@ const rootRouteChildren: RootRouteChildren = {
   AccountRoute: AccountRoute,
   CheckoutRoute: CheckoutRoute,
   ContactRoute: ContactRoute,
+  CustomBundleRoute: CustomBundleRoute,
   LoginRoute: LoginRoute,
   PrivacyPolicyRoute: PrivacyPolicyRoute,
   ReturnPolicyRoute: ReturnPolicyRoute,
